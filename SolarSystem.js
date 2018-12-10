@@ -31,11 +31,7 @@
     space_objects.push({name:"Сатурн",    mass:95.2*m0,   distance:9.54*a0,   radius:9.45*r0, time_around_Sun:29.46*t1,   phase:0,    color:"#c69e47",    file:"VL_SS_Saturn.png"});
     space_objects.push({name:"Уран",      mass:14.53*m0,  distance:19.19*a0,  radius:4*r0,    time_around_Sun:84.02*t1,   phase:0,    color:"#4e659b",    file:"VL_SS_Uranus.png"});
     space_objects.push({name:"Нептун",    mass:17.14*m0,  distance:30.06*a0,  radius:3.88*r0, time_around_Sun:164.78*t1,  phase:0,    color:"#4e6fbc",    file:"VL_SS_Neptunes.png"});
-//    space_objects.push({name:"Плутон",    mass:0.0022*m0, distance:39.53*a0,  radius:0.18*r0, time_around_Sun:248.09*t1,  phase:0});
-//    space_objects.push({name:"Хаумеа",    mass:777*m0,    distance:777*a0,    radius:777*r0,  time_around_Sun:285*t1,     phase:0});
-//    space_objects.push({name:"Макемаке",  mass:777*m0,    distance:777*a0,    radius:777*r0,  time_around_Sun:309.88*t1,  phase:0});
-//    space_objects.push({name:"Эрида",     mass:777*m0,    distance:777*a0,    radius:777*r0,  time_around_Sun:557*t1,     phase:0});
-//    space_objects.push({name:"Седна",     mass:777*m0,    distance:777*a0,    radius:777*r0,  time_around_Sun:12059*t1,   phase:0});
+
 
     for (var i = 0; i < space_objects.length; i++) {
         space_objects[i].phase = Math.random() * 360;
@@ -45,16 +41,7 @@
     var w = canvas.width / scale;                           // ширина окна в расчетных координатах
     var h = canvas.height / scale;                          // высота окна в расчетных координатах
 
-    // Генерация звезд
-    var stars = [];
-    function generate_stars() {
-        for (var i = 0; i < 1000; i++) {
-            // цвет задается как #xxyyzz, где xx - доля красного, yy - зеленого, zz - синего.
-            var r = (0x1a0 + (Math.random()) * 0x5f).toString(16).substr(1,2);  // красный от a0 до a0 + 5f
-            var g = (0x1a0 + (Math.random()) * 0x5f).toString(16).substr(1,2);
-            var b = (0x1a0 + (Math.random()) * 0x5f).toString(16).substr(1,2);
-            stars[i] = {x:Math.random() * w * scale, y:Math.random() * h * scale, color:'#' + r + g + b};
-        }
+
     }
 
     // Основной цикл программы
@@ -82,15 +69,8 @@
 
     // Рисование
     function draw() {
-        // темное небо
-        context.fillStyle = "#000000";
-        context.fillRect(0, 0, w * scale, h * scale);
+        background.image('Pics/sky.png', 0, 0);
 
-        // звезды
-        for (var i0 = 0; i0 < stars.length; i0++) {
-            context.fillStyle = stars[i0].color;
-            context.fillRect(stars[i0].x, stars[i0].y, 1, 1);
-        }
 
         for (var i = 0; i < space_objects.length; i++){
             var p = space_objects[i];
