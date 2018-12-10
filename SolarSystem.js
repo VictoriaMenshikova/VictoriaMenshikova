@@ -20,7 +20,9 @@
 
     // *** Выполнение программы ***
 
-    var space_objects = [];
+     background.image('Pics/sky.png', 0, 0);
+   
+     var space_objects = [];
     // значения distance и time_around_Sun у солнца сделаны для того, чтобы оно мерцало из-за движения
     space_objects.push({name:"Солнце",    mass:333000*m0, distance:0.001*a0,  radius:109.21*r0, time_around_Sun:60*t0,    phase:0,    color:"#f6e209",    file:"VL_SS_Sun.png"});
     space_objects.push({name:"Меркурий",  mass:0.05527*m0, distance:0.387*a0, radius:0.3829*r0, time_around_Sun:87.97*t0, phase:0,    color:"#de442c",    file:"VL_SS_Mercury.png"});
@@ -69,7 +71,7 @@
 
     // Рисование
     function draw() {
-        background.image('Pics/sky.png', 0, 0);
+
 
 
         for (var i = 0; i < space_objects.length; i++){
