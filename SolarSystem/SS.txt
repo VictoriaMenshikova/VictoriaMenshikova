@@ -1,9 +1,0 @@
-﻿<html>
-<head>
-    <title>Solar System</title>
-    <script src="SolarSystem.js"></script>
-</head>
-<body>
-    <script type="text/javascript">var app = new Solar_System(document.getElementById('Solar_System'));</script>
-</body>
-</html>
