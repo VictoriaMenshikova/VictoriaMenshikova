@@ -20,7 +20,6 @@
 
     // *** Выполнение программы ***
 
-     background.image('Pics/sky.png', 0, 0);
    
      var space_objects = [];
     // значения distance и time_around_Sun у солнца сделаны для того, чтобы оно мерцало из-за движения
